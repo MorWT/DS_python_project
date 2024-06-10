@@ -52,4 +52,6 @@ To get started with the project, follow these steps:
   streamlit run streamlit_app.py
   ```
 
+- To finish Streamlit service press `ctrl + C` in your terminal
+
 
