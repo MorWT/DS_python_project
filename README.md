@@ -22,20 +22,21 @@ To get started with the project, follow these steps:
 
 2. **Optional - Create a virtual environment**:
   
-  ```bash
-  python -m venv venv
-  ```
-  Activate the virtual environment:
+    ```bash
+    python -m venv venv
+    ```
+    Activate the virtual environment:
   
-  ```bash
-  venv\Scripts\activate
-  ```
-  Note: if you want to get out from the virtual environment enter in the command prompt: `deactivate`
+    ```bash
+    venv\Scripts\activate
+    ```
+    Note: if you want to get out from the virtual environment enter in the command prompt: `deactivate`
+
 
 3. **Install the required packages**:
-  ```bash
-  pip install -r requirements.txt
-  ```
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 
 ## Usage
