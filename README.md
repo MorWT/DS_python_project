@@ -39,13 +39,13 @@ To get started with the project, follow these steps:
 
 
 ## Usage
-**Run the Main Application**
+### Run the Main Application
   To run the main weather application, execute the following command:
   ```bash
   python main.py
   ```
 
-**Run the Streamlit Web UI Application**
+### Run the Streamlit Web UI Application
   To run the Streamlit web UI application, use the following command:
   ```bash
   streamlit run streamlit_app.py
