@@ -3,6 +3,7 @@ import requests
 from datetime import datetime, timedelta
 import pytz
 import pandas as pd
+from cryptography.fernet import Fernet
 
 
 # Function to display date and time
@@ -56,8 +57,12 @@ def display_weather_data(weather_data, current_location_data):
 # Main Streamlit App
 def main():
     st.title("Weather App")
+    # To avoid using the API Key as it is in the code we will use encrypted values
+    encryption_key = b'bxcWy0bgeAGdzktvpT_FNVXnSFs4LSLEyqNeVi3hPjA='
+    cipher_text = b'gAAAAABmauEkdvGwEUWfCXpzjWsLIYHFH3OxNzLUVMZ2RR4EeOYcxZ3q3m_rSBTDsAvUDiW9c3If6fkYxFrDIrDTavjk7nKu8tT7HzD84dgnZdhM6GX0a5-k49FRB8i3G0L3VTPS6cqu'
 
-    api_key = st.text_input("Enter your OpenWeatherMap API key")
+    cipher_suite = Fernet(encryption_key)
+    api_key = cipher_suite.decrypt(cipher_text).decode()
     current_location = st.text_input("Enter your current location")
     city_name = st.text_input("Enter city name to check the weather")
 
