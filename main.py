@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime, timedelta
 import pytz
+from cryptography.fernet import Fernet
 
 
 def display_date_time(timezone):
@@ -55,7 +56,12 @@ def display_weather_data(weather_data, current_location_data):
 
 # Main function
 def main():
-    api_key = input("Please enter your OpenWeatherMap API key that you have received to your mail:")
+    # To avoid using the API Key as it is in the code we will use encrypted values
+    encryption_key = b'bxcWy0bgeAGdzktvpT_FNVXnSFs4LSLEyqNeVi3hPjA='
+    cipher_text = b'gAAAAABmauEkdvGwEUWfCXpzjWsLIYHFH3OxNzLUVMZ2RR4EeOYcxZ3q3m_rSBTDsAvUDiW9c3If6fkYxFrDIrDTavjk7nKu8tT7HzD84dgnZdhM6GX0a5-k49FRB8i3G0L3VTPS6cqu'
+
+    cipher_suite = Fernet(encryption_key)
+    api_key = cipher_suite.decrypt(cipher_text).decode()
     current_location = input("Please enter your current location: ")
     city_name = input("Please enter city name to check the weather: ")
 
